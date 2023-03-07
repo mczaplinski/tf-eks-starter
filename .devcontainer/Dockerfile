@@ -22,3 +22,6 @@ RUN curl -sSL "https://github.com/terraform-linters/tflint/releases/download/v${
 RUN curl -sSL "https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64" -o "terragrunt" && \
     chmod a+x terragrunt && \
     mv -f terragrunt /usr/local/bin/terragrunt
+
+ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
+CMD [ "sleep", "infinity" ]

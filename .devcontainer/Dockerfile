@@ -7,6 +7,8 @@ ARG TERRAFORM_VERSION=1.3.9
 ARG TFLINT_VERSION=0.45.0
 ARG TERRAGRUNT_VERSION=0.44.4
 
+RUN curl -sSL https://get.docker.com/ | sh
+
 RUN curl -sSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     sudo ./aws/install

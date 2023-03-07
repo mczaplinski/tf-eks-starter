@@ -30,7 +30,8 @@
 				}
 			},
 			"extensions": [
-				"hashicorp.terraform"
+				"hashicorp.terraform",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}

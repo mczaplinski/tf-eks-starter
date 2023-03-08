@@ -20,6 +20,9 @@ RUN curl -sSL "https://github.com/terraform-linters/tflint/releases/download/v${
 RUN curl -sSL "https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64" -o "terragrunt" && \
     chmod a+x terragrunt && \
     mv -f terragrunt /usr/local/bin/terragrunt
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
+    chmod a+x kubectl && \
+    mv -f kubectl /usr/local/bin/
 
 # # Golang Dev Tools
 RUN wget -q "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" -O /tmp/golang.tar.gz && \

@@ -13,16 +13,16 @@ RUN curl -sSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "aws
     ./aws/install
 RUN curl -sSL "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -o "tf.zip" && \
     unzip tf.zip && \
-    mv terraform /usr/local/bin/
+    sudo mv terraform /usr/local/bin/
 RUN curl -sSL "https://github.com/terraform-linters/tflint/releases/download/v${TFLINT_VERSION}/tflint_linux_amd64.zip" -o "tflint.zip" && \
     unzip tflint.zip && \
-    mv -f tflint /usr/local/bin/
+    sudo mv -f tflint /usr/local/bin/
 RUN curl -sSL "https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64" -o "terragrunt" && \
     chmod a+x terragrunt && \
-    mv -f terragrunt /usr/local/bin/terragrunt
+    sudo mv -f terragrunt /usr/local/bin/terragrunt
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     chmod a+x kubectl && \
-    mv -f kubectl /usr/local/bin/
+    sudo mv -f kubectl /usr/local/bin/
 
 # # Golang Dev Tools
 RUN wget -q "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" -O /tmp/golang.tar.gz && \

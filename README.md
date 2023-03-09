@@ -25,6 +25,8 @@ Based on the resources at hashicorp and AWS.
 
 * DOCKER_PASSWORD
 
+* TF_API_TOKEN
+
 ## Usage
 
 ### 1. Provision EKS cluster

@@ -1,8 +1,10 @@
 terraform {
 
   cloud {
+    organization = "mczaplinski"
+
     workspaces {
-      name = "learn-terraform-eks"
+      name = "tf-eks-starter"
     }
   }
 

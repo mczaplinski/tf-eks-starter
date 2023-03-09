@@ -23,6 +23,8 @@ RUN curl -sSL "https://github.com/gruntwork-io/terragrunt/releases/download/v${T
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     chmod a+x kubectl && \
     sudo mv -f kubectl /usr/local/bin/
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash && \
+    sudo chmod a+x /usr/local/bin/helm
 
 # # Golang Dev Tools
 RUN wget -q "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" -O /tmp/golang.tar.gz && \

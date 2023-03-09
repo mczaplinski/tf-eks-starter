@@ -9,15 +9,21 @@ Based on the resources at hashicorp and AWS.
 * Terraform Cloud account and organization
 * AWS with IAM user access key
 
-### 1. Required environment variables
+### Required environment variables
 
 * TF_CLOUD_ORGANIZATION
 
-### 2. Provide the following variables (e.g. in Terraform Cloud)
+### Required Terraform Variables (e.g. in Terraform Cloud)
 
 * AWS_ACCESS_KEY_ID
 
 * AWS_SECRET_ACCESS_KEY
+
+### Required Variables for Github Actions
+
+* DOCKER_USERNAME
+
+* DOCKER_PASSWORD
 
 ## Usage
 

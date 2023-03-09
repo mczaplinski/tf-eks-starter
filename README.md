@@ -19,7 +19,7 @@ Based on the resources at hashicorp and AWS.
 
 * AWS_SECRET_ACCESS_KEY
 
-### Required Variables for Github Actions
+### Required Secrets for Github Actions
 
 * DOCKER_USERNAME
 

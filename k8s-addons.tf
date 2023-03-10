@@ -3,9 +3,20 @@ resource "random_password" "argocd" {
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
-
+# Argo requires the password to be bcrypt, we use custom provider of bcrypt,
+# as the default bcrypt function generates diff for each terraform plan
 resource "bcrypt_hash" "argo" {
   cleartext = random_password.argocd.result
+}
+
+resource "aws_secretsmanager_secret" "argocd" {
+  name                    = "argocd"
+  recovery_window_in_days = 0
+}
+
+resource "aws_secretsmanager_secret_version" "argocd" {
+  secret_id     = aws_secretsmanager_secret.argocd.id
+  secret_string = random_password.argocd.result
 }
 
 module "k8s-addons" {
@@ -39,10 +50,10 @@ module "k8s-addons" {
   argocd_manage_add_ons = true
 
   argocd_applications = {
-    addons = {
+    hello = {
       path               = "app/hello/chart"
       repo_url           = "https://github.com/mczaplinski/tf-eks-starter.git"
-      add_on_application = true
+      add_on_application = false
     }
   }
 

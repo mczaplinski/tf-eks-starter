@@ -30,10 +30,10 @@
 			"moby": true
 		}
 	},
-	"postStartCommand": [
-		"terraform",
-		"init"
-	],
+	// "postStartCommand": [
+	// 	"terraform",
+	// 	"init"
+	// ],
 	"postCreateCommand": "terraform --version",
 	// "mounts": [
 	// 	"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"

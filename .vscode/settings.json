@@ -1,0 +1,11 @@
+{
+    "terraform.languageServer.args": [
+        "serve"
+    ],
+    "terraform.languageServer.enable": true,
+    "terraform.languageServer.ignoreSingleFileWarning": false,
+    "terraform.languageServer.indexing.ignoreDirectoryNames": [],
+    "terraform.languageServer.indexing.ignorePaths": [],
+    "terraform.languageServer.path": "",
+    "terraform.languageServer.tcp.port": null,
+}

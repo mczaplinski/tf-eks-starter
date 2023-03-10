@@ -25,8 +25,9 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     sudo mv -f kubectl /usr/local/bin/
 RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash && \
     sudo chmod a+x /usr/local/bin/helm
+RUN curl -sS https://webinstall.dev/k9s | bash
 
-# # Golang Dev Tools
+# Golang Dev Tools
 RUN wget -q "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" -O /tmp/golang.tar.gz && \
     tar -C /usr/local -xzf /tmp/golang.tar.gz && \
     rm /tmp/golang.tar.gz

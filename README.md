@@ -2,14 +2,11 @@
 
 Starter kit for provisioning a simple hello world application on Amazon Elastic Kubernetes Services (EKS) using Terraform Cloud and Argo CD
 
-Based on the resources at hashicorp and AWS.
+Based on the learning resources from hashicorp and AWS.
 
 ## Prerequisites
 
-* Terraform Cloud account and organization
-* AWS with IAM user access key
-
-### Required environment variables
+### Required environment variables for local development (optional)
 
 * TF_CLOUD_ORGANIZATION
 
@@ -27,21 +24,12 @@ Based on the resources at hashicorp and AWS.
 
 * TF_API_TOKEN
 
-## Usage
+## Getting Started
 
-### 1. Provision EKS cluster
-
-```bash
-aws configure
-
-terraform init
-
-terraform apply
-```
-
-### 2. Save kubeconfig
-
-```bash
-aws eks --region $(terraform output -raw region) update-kubeconfig \
-    --name $(terraform output -raw cluster_name)
-```
+1. Fork this repository
+2. Setup a Terraform Cloud and AWS account
+3. Generate API and access tokens (see Prerequisites above) and save them as Github Secrets in your forked repository
+4. (optional) Open up a Github Codespace for this repository (if you don't want to install the required tools locally)
+5. (optional) `aws configure` and `terraform login`
+6. Edit files to match your environment and configuration
+7. Create pull request to merge your changes into the main branch and let the CI do the rest

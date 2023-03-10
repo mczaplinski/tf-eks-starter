@@ -19,6 +19,12 @@ resource "aws_secretsmanager_secret_version" "argocd" {
   secret_string = random_password.argocd.result
 }
 
+resource "kubernetes_namespace" "app" {
+  metadata {
+    name = "app"
+  }
+}
+
 module "k8s-addons" {
   source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons"
 
